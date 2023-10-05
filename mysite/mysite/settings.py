@@ -28,10 +28,13 @@ DEBUG = True
 
 #ALLOWED_HOSTS = [".versel.app"]
 
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+#ALLOWED_HOSTS = ['198.211.99.20', 'localhost', '127.0.0.1','samsonasumuHellowWorld']
 
-ALLOWED_HOSTS = ['198.211.99.20', 'localhost', '127.0.0.1','samsonasumuHellowWorld']
 
-
+import os
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 # Application definition
 
 INSTALLED_APPS = [
@@ -79,12 +82,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
+#DATABASES = {
+#   'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}
+#}
 
 
 # Password validation
